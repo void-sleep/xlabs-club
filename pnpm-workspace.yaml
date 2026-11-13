@@ -1,0 +1,5 @@
+allowBuilds:
+  sharp: true
+minimumReleaseAgeExclude:
+  - '@astrojs/starlight@0.42.11'
+  - prettier@3.10.1

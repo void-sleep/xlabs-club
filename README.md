@@ -1,9 +1,9 @@
-# xlabs-club.github.io
+# xlabs-club
 
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/xlabs-club/xlabs-club.github.io/.github%2Fworkflows%2Fgh-pages.yml)](https://github.com/xlabs-club/xlabs-club.github.io/actions)
-[![GitHub Repo stars](https://img.shields.io/github/stars/xlabs-club/xlabs-club.github.io)](https://github.com/xlabs-club/xlabs-club.github.io/stargazers)
-[![GitHub contributors](https://img.shields.io/github/contributors/xlabs-club/xlabs-club.github.io)](https://github.com/xlabs-club/xlabs-club.github.io/graphs/contributors)
-[![Commit Activity](https://img.shields.io/github/commit-activity/m/xlabs-club/xlabs-club.github.io)](https://github.com/xlabs-club/xlabs-club.github.io)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/void-sleep/xlabs-club/.github%2Fworkflows%2Fgh-pages.yml)](https://github.com/void-sleep/xlabs-club/actions)
+[![GitHub Repo stars](https://img.shields.io/github/stars/void-sleep/xlabs-club)](https://github.com/void-sleep/xlabs-club/stargazers)
+[![GitHub contributors](https://img.shields.io/github/contributors/void-sleep/xlabs-club)](https://github.com/void-sleep/xlabs-club/graphs/contributors)
+[![Commit Activity](https://img.shields.io/github/commit-activity/m/void-sleep/xlabs-club)](https://github.com/void-sleep/xlabs-club)
 
 中文 | [English](README.en.md)
 
@@ -21,7 +21,7 @@ _如果这些笔记对你的工作有帮助，给仓库点个 ⭐，是我们持
 - **云原生** — 以云原生技术支撑不断变化的复杂业务。
 - **技术博客** — 研发踩坑记录，翻一翻总有惊喜。
 - **awesome-x-ops** — AIOps/DataOps/DevOps/GitOps/FinOps 的优秀软件、博客与工具精选。
-- **xlabs-ops** — Argo Workflows 等 IaC 运维脚本与通用模板，官方 Examples 的组合与扩展。
+- **void-ops** — Argo Workflows 等 IaC 运维脚本与通用模板，官方 Examples 的组合与扩展。
 
 ## 精选阅读
 
@@ -33,26 +33,22 @@ _如果这些笔记对你的工作有帮助，给仓库点个 ⭐，是我们持
 
 ## 贡献指南
 
-本项目使用 [Hugo][] 开发，使用 [Doks][] 作为 Hugo 主题，一切内容都是 Markdown，专心写文字即可。
+本项目使用 [Astro][] + [Starlight][] 构建，博客来自 [Starlight Blog][]；一切内容都是 Markdown，专心写文字即可。
 
-本地开发时需要先安装 Node.js 和 Hugo。
+本地开发需要 Node.js 26 与 pnpm 12。
 
 ```bash
-# 安装 npm 依赖包，注意此过程需要连接 github 下载 hugo
-npm install
-# 启动 Web，然后浏览器访问 http://localhost:1313/ 即可浏览效果
-npm run dev
-# 创建新页面
-npm run create docs/platform/backstage.md
-npm run create blog/k8s.md
-# 编译结果
-npm run build
+pnpm install
+# 启动开发服务器，浏览器访问 http://localhost:4321/
+pnpm run dev
+# 构建到 dist/
+pnpm run build
 ```
 
 内容目录结构：
 
 ```
-content/
+src/content/docs/
 ├── blog/      # 踩坑记录、实践笔记
 └── docs/
     ├── cloud/     # 云原生
@@ -61,7 +57,7 @@ content/
     └── tldr/      # 简明速查
 ```
 
-新文章最小 front matter 示例：
+新文章最小 front matter 示例（`src/content/docs/blog/my-post.md`）：
 
 ```markdown
 ---
@@ -70,16 +66,18 @@ description: "一句话摘要"
 date: 2024-03-31T21:29:52+08:00
 draft: false
 tags: [k8s]
+categories: ["K8S"]
 ---
 ```
 
-创建文件 → `npm run dev` 预览 → 提 PR 即可。
+创建文件 → `pnpm run dev` 预览 → 提 PR 即可。
 
 ## License
 
 本文档采用 [CC BY-NC 4.0][] 许可协议。
 
 [xlabs.club]: https://www.xlabs.club
-[Hugo]: https://gohugo.io/
-[Doks]: https://github.com/thuliteio/doks
+[Astro]: https://astro.build/
+[Starlight]: https://starlight.astro.build/
+[Starlight Blog]: https://starlight-blog-docs.vercel.app/
 [CC BY-NC 4.0]: https://creativecommons.org/licenses/by-nc/4.0/

@@ -1,0 +1,50 @@
+---
+import type { Post } from '../libs/posts';
+
+interface Props {
+    posts: Post[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul class="xl-posts">
+    {posts.map((post) => (
+        <li>
+            <a href={`/${post.id}/`}>{post.data.title}</a>
+            <p>{post.data.description}</p>
+            {post.data.date && <time datetime={post.data.date.toISOString()}>{post.data.date.toISOString().slice(0, 10)}</time>}
+        </li>
+    ))}
+</ul>
+
+<style>
+    .xl-posts {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .xl-posts li {
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid var(--sl-color-hairline);
+    }
+
+    .xl-posts a {
+        font-size: var(--sl-text-h5);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .xl-posts p {
+        margin: 0.35rem 0 0.5rem;
+        color: var(--sl-color-gray-2);
+        font-size: var(--sl-text-sm);
+    }
+
+    .xl-posts time {
+        color: var(--sl-color-gray-3);
+        font-size: var(--sl-text-xs);
+    }
+</style>

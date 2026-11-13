@@ -1,0 +1,182 @@
+/* XLabs Club theme: brand accents, homepage layout, blog spacing. */
+
+:root {
+    --sl-content-width: 52rem;
+
+    --sl-color-accent-low: hsl(272, 36%, 20%);
+    --sl-color-accent: hsl(272, 42%, 55%);
+    --sl-color-accent-high: hsl(272, 45%, 82%);
+}
+
+:root[data-theme='light'] {
+    --sl-color-accent-low: hsl(272, 40%, 93%);
+    --sl-color-accent: hsl(272, 47%, 35%);
+    --sl-color-accent-high: hsl(272, 45%, 25%);
+}
+
+/* Homepage ------------------------------------------------------------ */
+
+.xl-meta {
+    text-align: center;
+    margin-top: -0.5rem;
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+}
+
+.xl-meta a {
+    color: var(--sl-color-gray-2);
+}
+
+/* Dotted separator between the hero and the feature grid. */
+.xl-meta::after {
+    content: '';
+    display: block;
+    height: 7rem;
+    margin-top: 1.5rem;
+    background-image: radial-gradient(var(--sl-color-gray-5) 1px, transparent 1px);
+    background-size: 16px 16px;
+    mask-image: radial-gradient(circle at 20% 30%, #000 0%, transparent 65%);
+    -webkit-mask-image: radial-gradient(circle at 20% 30%, #000 0%, transparent 65%);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.xl-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
+    gap: 2.5rem 3rem;
+    margin: 0 auto;
+    max-width: 62rem;
+    text-align: center;
+}
+
+.xl-feature h2 {
+    font-size: var(--sl-text-h4);
+    margin: 0 0 0.5rem;
+    color: var(--sl-color-white);
+}
+
+.xl-feature p {
+    margin: 0.25rem 0;
+    color: var(--sl-color-gray-2);
+}
+
+.xl-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--sl-color-text-accent);
+}
+
+.xl-feature a:hover .xl-icon {
+    color: var(--sl-color-accent-high);
+}
+
+.xl-join {
+    margin: 4rem auto 0;
+    max-width: 62rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 0.75rem;
+    background: var(--sl-color-gray-6);
+    text-align: center;
+}
+
+.xl-join h2 {
+    margin-top: 0;
+    font-size: var(--sl-text-h4);
+}
+
+.xl-join p {
+    color: var(--sl-color-gray-2);
+}
+
+.xl-join-cta {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.55rem 1.6rem;
+    border-radius: 999px;
+    background: var(--sl-color-text-accent);
+    color: var(--sl-color-black);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.xl-join-cta:hover {
+    background: var(--sl-color-accent-high);
+    color: var(--sl-color-black);
+}
+
+/* Circular logo crop with a hover spin. */
+.hero > img {
+    border-radius: 15%;
+    clip-path: circle(85% at center);
+    transition: filter 0.3s ease;
+}
+
+.hero > img:hover {
+    animation: xl-rotate-once 2s ease-in-out forwards;
+}
+
+@keyframes xl-rotate-once {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Blog --------------------------------------------------------------- */
+
+.sl-blog-posts {
+    gap: 1.25rem !important;
+}
+
+.sl-blog-preview {
+    gap: 0.35rem !important;
+}
+
+.pagination-links a {
+    padding: 0.65rem 0.85rem;
+    font-size: var(--sl-text-sm);
+}
+
+/* Starlight opens the right-hand TOC at 72rem; with a 52rem article the
+   three-column layout collides on laptop widths. Keep the in-page TOC a bit
+   longer instead of squeezing the article. */
+@media (min-width: 72rem) and (max-width: 99.99rem) {
+    :root {
+        --sl-mobile-toc-height: 3rem;
+    }
+
+    html {
+        scroll-padding-top: calc(1.5rem + var(--sl-nav-height) + var(--sl-mobile-toc-height));
+    }
+
+    .lg\:sl-hidden {
+        display: block;
+    }
+
+    .right-sidebar-panel.lg\:sl-block {
+        display: none;
+    }
+
+    .right-sidebar-container {
+        width: auto;
+        margin-inline-start: 0;
+        position: static;
+    }
+
+    .right-sidebar {
+        position: static;
+        height: auto;
+        width: auto;
+        padding-top: 0;
+        border-inline-start: 0;
+        overflow: visible;
+    }
+
+    [data-has-sidebar][data-has-toc] .main-pane {
+        width: 100%;
+        --sl-content-margin-inline: auto;
+    }
+}

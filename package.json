@@ -1,36 +1,39 @@
 {
   "name": "xlabs-club",
-  "version": "1.8.0",
-  "description": "This is the source of xlabs.club",
-  "author": "xlabs-club",
+  "version": "2.0.0",
+  "description": "This is the source of xlabs.club — Astro + Starlight",
+  "author": "void-sleep",
   "license": "CC BY-NC 4.0",
+  "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xlabs-club/xlabs-club.github.io.git"
+    "url": "https://github.com/void-sleep/xlabs-club.git"
   },
   "scripts": {
-    "create": "hugo new",
-    "dev": "hugo server --disableFastRender --noHTTPCache",
-    "format": "prettier **/** -w -c",
-    "build": "hugo --minify --gc"
-  },
-  "dependencies": {
-    "@docsearch/css": "^4.6.3",
-    "@docsearch/js": "^4.6.3",
-    "@tabler/icons": "^3.44.0",
-    "@thulite/doks-core": "^1.9.3",
-    "@thulite/images": "^3.3.4",
-    "@thulite/inline-svg": "^1.2.2",
-    "@thulite/seo": "^2.4.3",
-    "mermaid": "^11.15.0",
-    "purgecss-whitelister": "^2.4.0",
-    "thulite": "^2.6.5"
-  },
-  "devDependencies": {
-    "prettier": "^3.8.4",
-    "vite": "^8.0.16"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "format": "prettier --write \"src/**/*.{md,astro,ts,css}\""
   },
   "engines": {
-    "node": ">=22.16.0"
+    "node": ">=26",
+    "pnpm": ">=10"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/starlight": "^0.42.11",
+    "astro": "^7.4.11",
+    "astro-mermaid": "^2.2.0",
+    "mermaid": "^12.3.0",
+    "sharp": "^0.35.5",
+    "starlight-blog": "^0.30.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/markdown-remark": "^7.3.8",
+    "prettier": "^3.10.1",
+    "prettier-plugin-astro": "^1.1.2",
+    "typescript": "^6.0.3"
   }
 }

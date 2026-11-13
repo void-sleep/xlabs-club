@@ -1,0 +1,70 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+
+const label = Astro.locals.t('themeSelect.accessibleLabel');
+---
+
+<starlight-theme-select>
+    <button type="button" class="theme-toggle" aria-label={label} title={label}>
+        <Icon name="sun" class="theme-toggle-icon" />
+    </button>
+</starlight-theme-select>
+
+<script>
+    type Theme = 'dark' | 'light';
+
+    const storageKey = 'starlight-theme';
+
+    const systemTheme = (): Theme => (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+
+    const loadTheme = (): Theme => {
+        const stored = typeof localStorage !== 'undefined' ? localStorage.getItem(storageKey) : null;
+        if (stored === 'light' || stored === 'dark') return stored;
+        return systemTheme();
+    };
+
+    const applyTheme = (theme: Theme) => {
+        document.documentElement.dataset.theme = theme;
+        if (typeof localStorage !== 'undefined') localStorage.setItem(storageKey, theme);
+    };
+
+    class StarlightThemeSelect extends HTMLElement {
+        constructor() {
+            super();
+            applyTheme(loadTheme());
+            this.querySelector('button')?.addEventListener('click', () => {
+                applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light');
+            });
+        }
+    }
+
+    if (!customElements.get('starlight-theme-select')) {
+        customElements.define('starlight-theme-select', StarlightThemeSelect);
+    }
+</script>
+
+<style>
+    .theme-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        width: 1.75rem;
+        height: 1.75rem;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--sl-color-gray-2);
+        cursor: pointer;
+    }
+
+    .theme-toggle:hover {
+        color: var(--sl-color-white);
+    }
+
+    .theme-toggle :global(svg) {
+        width: 1.1rem;
+        height: 1.1rem;
+    }
+</style>

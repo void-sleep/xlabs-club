@@ -1,0 +1,35 @@
+---
+import { getPosts } from '../../../libs/posts';
+
+// Hugo paginated at /blog/page/<n>/; starlight-blog uses /blog/<n>. Keep the
+// legacy addresses pointing at the live page. Astro hoists `getStaticPaths`,
+// so the page size lives inside it rather than at module scope.
+export async function getStaticPaths() {
+    const PER_PAGE = 10;
+    const posts = await getPosts();
+    const pages = Math.ceil(posts.length / PER_PAGE);
+
+    return Array.from({ length: Math.max(pages - 1, 0) }, (_, i) => ({
+        params: { page: String(i + 2) },
+        props: { target: `/blog/${i + 2}/` }
+    }));
+}
+
+const { target } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>Redirecting to: {target}</title>
+        <meta http-equiv="refresh" content={`0;url=${target}`} />
+        <meta name="robots" content="noindex" />
+        <link rel="canonical" href={new URL(target, Astro.site)} />
+    </head>
+    <body>
+        <a href={target}>
+            Redirecting from <code>{Astro.url.pathname}</code> to <code>{target}</code>
+        </a>
+    </body>
+</html>

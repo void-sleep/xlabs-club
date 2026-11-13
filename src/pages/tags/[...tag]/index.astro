@@ -1,0 +1,29 @@
+---
+import TermPages from '../../../components/TermPages.astro';
+import { collect } from '../../../libs/posts';
+import { paginate } from '../../../libs/paginate';
+
+export async function getStaticPaths() {
+    const tags = await collect('tags');
+
+    // A rest parameter because legacy terms like `ci/cd` and `server/discover`
+    // contain a slash.
+    return tags.map((term) => {
+        const pages = paginate(term.posts);
+        return {
+            params: { tag: term.slug },
+            props: {
+                label: term.label,
+                slug: term.slug,
+                page: 1,
+                total: pages.length,
+                posts: pages[0].items
+            }
+        };
+    });
+}
+
+const { label, slug, page, total, posts } = Astro.props;
+---
+
+<TermPages kind="标签" {label} base={`/tags/${slug}`} {page} {total} {posts} />

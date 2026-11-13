@@ -1,23 +1,29 @@
 Thumbs.db
 .DS_Store
-.dist
+node_modules
+dist
+.astro
+.idea
+*.log
+*.tsbuildinfo
+.pnpm-store/
+
+# Editor and tooling caches
 .tmp
-.lock
 .sass-cache
 .eslintcache
 .stylelintcache
-.netlify
-.hugo_build.lock
-# hugo_stats.json is necessary for doks
-# hugo_stats.json
-node_modules
-public
-resources
-package-lock.json
-# pnpm-lock.yaml
-
-.idea
 .impl
-*.log
+
+# Build artefacts and local caches
+resources/
+.worktrees/
+.teamai/
+
+# Local agent settings
 .claude/
 .claude.json
+
+.env
+.env.*
+!.env.example

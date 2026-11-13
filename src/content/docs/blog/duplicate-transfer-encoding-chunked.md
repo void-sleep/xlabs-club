@@ -1,0 +1,171 @@
+---
+title: "重复 Transfer-Encoding Response Header 引起的 Traefik 代理服务 500 问题"
+description: "重复 Transfer-Encoding Response Header 引起的 Traefik 代理服务 500 问题，包含 Spring Boot 应用 Header 重复问题排查和解决方案"
+date: 2023-11-26T10:21:44+08:00
+lastUpdated: 2025-12-18T22:55:02+08:00
+tags: [Java, Traefik, Spring Boot, HTTP Header]
+authors: ["void-sleep"]
+categories: ["Java"]
+---
+
+我有一个 Spring Boot 应用服务，提供了一些简单的查询接口，本身运行很正常，通过 curl 或其他 http 客户端 localhost 请求都没有问题。
+
+某天通过 Traefik 代理了此服务，经过代理后再访问，某个接口一直都是 `500 internal server error`，其他接口都没有问题。通过 tcpdump 抓包发现，应用服务并没有返回任何 500 错误，而且响应时间和 Body 体大小都很正常。
+
+根据网上经验排查了 Traefik SSL 证书问题、路径问题、消息体太大问题、请求 Header 不合规问题，都一一否定。最后无意间看了一眼 Response Header，发现 Spring Boot 应用返回了两个 `Transfer-Encoding: chunked` Header。
+
+再根据此 Header 搜索，发现果然有人遇到过类似问题，请参考这几个链接。
+
+- <https://github.com/traefik/traefik/issues/7741>
+- <https://github.com/spring-projects/spring-framework/issues/21523>
+- <https://github.com/spring-projects/spring-boot/issues/37646>
+- <https://stackoverflow.com/questions/77042701/nginx-upstream-sent-duplicate-header-line-transfer-encoding-chunked-previo>
+
+从上面链接描述中可知，不仅 Traefik 会出现此问题，nginx 包含以 nginx 为基础的 ingress 也会出现同样问题，不过 nginx 返回错误信息类似 `Nginx: upstream sent duplicate header line: "Transfer-Encoding: chunked", previous value: "Transfer-Encoding: chunked"` ，返回错误码一般是 502 Bad Gateway。
+
+我所使用的 Traefik(2.10.6) 和 Spring Boot(2.7.17) 都是当前日期最新版本，目前仍然有问题。
+
+## 根因分析
+
+为什么会产生重复的 `Transfer-Encoding: chunked` Header？分两段来看。
+
+**源头：`RestTemplate.getForEntity()`**
+
+`RestTemplate` 内部使用 Apache `HttpClient` 或 JDK `HttpURLConnection` 发出 HTTP 请求。当上游服务返回一个 chunked 编码的响应时，底层 HTTP 客户端将完整的响应体读取到内存后，响应对象（`ClientHttpResponse`）仍然保留原始响应的 `Transfer-Encoding: chunked` Header。
+
+关键点：`getForEntity()` 返回的 `ResponseEntity` 包含了上游服务的 **原始 Response Header**。
+
+**放大：Spring MVC `HttpEntityMethodProcessor`**
+
+当 Controller 方法返回 `ResponseEntity<String>` 时，Spring MVC 的 `HttpEntityMethodProcessor` 负责将其写入 HTTP 响应。它会：
+
+1. 将 `ResponseEntity` 中的 Header 逐条写入 Servlet Response。
+2. 写入 Body。
+
+而 Tomcat（底层 Servlet 容器）在写入 Body 时，根据 Content-Length 是否已知来决定编码方式。对于 `String` 类型返回，如果未设置 `Content-Length`，Tomcat 会自动设置 `Transfer-Encoding: chunked` 并分块输出。
+
+结果：`ResponseEntity` 携带的原始 `Transfer-Encoding: chunked` 被写入，Tomcat 又写了一个自己的 → 重复 Header。
+
+**小结：**
+
+```
+上游服务返回 → RestTemplate 解析（Header 包含 Transfer-Encoding: chunked）
+  → ResponseEntity 包装原始响应（Header + Body）
+  → Spring MVC 写入 Header（包含 Transfer-Encoding: chunked）
+  → Tomcat 写入 Body 时也设置 Transfer-Encoding: chunked
+  → 重复！
+```
+
+## 解决方案
+
+### 方案一：用 ResponseEntity.ok() 重新包装（推荐，最简单）
+
+出现此问题的代码类似如下。
+
+```java
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.client.RestTemplate;
+
+@Controller
+@RequestMapping("/status")
+public class StatusController {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @GetMapping(value = "/test")
+    public ResponseEntity<String> getStatus() {
+        return restTemplate.getForEntity("http://another-service/actuator/health", String.class);
+    }
+}
+```
+
+修改为如下方式即解决问题。
+
+```java
+@Controller
+@RequestMapping("/status")
+public class StatusController {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @GetMapping(value = "/test")
+    public ResponseEntity<String> getStatus() {
+        // 不要直接用 RestTemplate 返回值，使用 ResponseEntity 重新包装一次
+        return ResponseEntity.ok(restTemplate.getForEntity("http://another-service/actuator/health", String.class));
+    }
+}
+```
+
+`ResponseEntity.ok()` 创建一个全新的 `ResponseEntity`，只带 Body，不带原始 Header，根除了重复问题。
+
+### 方案二：返回 Body 而非 ResponseEntity
+
+更干净的写法——让 Spring MVC 自行构建响应：
+
+```java
+@GetMapping(value = "/test")
+public String getStatus() {
+    return restTemplate.getForObject("http://another-service/actuator/health", String.class);
+}
+```
+
+适用场景：不需要透传上游的 HTTP 状态码和 Header。
+
+### 方案三：用 ClientHttpRequestInterceptor 清理 Header
+
+在 `RestTemplate` 实例上添加拦截器，统一过滤掉不应透传的 Header：
+
+```java
+@Bean
+public RestTemplate restTemplate() {
+    RestTemplate restTemplate = new RestTemplate();
+    restTemplate.getInterceptors().add((request, body, execution) -> {
+        ClientHttpResponse response = execution.execute(request, body);
+        // 过滤掉 hop-by-hop headers
+        response.getHeaders().remove("Transfer-Encoding");
+        response.getHeaders().remove("Connection");
+        response.getHeaders().remove("Keep-Alive");
+        return response;
+    });
+    return restTemplate;
+}
+```
+
+这是最彻底的修复方式，所有使用该 `RestTemplate` 的地方都无需改动。
+
+### 方案四：使用 WebClient（Spring 5+ / Spring Boot 2+）
+
+`WebClient` 的响应模型设计更清晰，不会出现 Header 透传问题：
+
+```java
+@GetMapping(value = "/test")
+public Mono<String> getStatus() {
+    return webClient.get()
+        .uri("http://another-service/actuator/health")
+        .retrieve()
+        .bodyToMono(String.class);
+}
+```
+
+## 影响范围
+
+根据 GitHub Issue 反馈，不仅 RestTemplate，使用 OpenFeign 也会触发以上问题。因为 Feign 底层同样复用了带有原始 Header 的 HTTP 响应对象。
+
+根本原则：**直接透传上游 HTTP 响应到下游时，过滤掉 hop-by-hop headers**（`Transfer-Encoding`、`Connection`、`Keep-Alive`、`Proxy-Authenticate` 等），这些 Header 按 HTTP/1.1 规范不应被代理层逐跳传递。
+
+## 排查手段
+
+如果遇到服务经过代理后返回 500/502，而直连正常，从以下维度排查：
+
+1. **对比直连和代理的 HTTP 响应**：`curl -v` 直连服务端口，与经过代理后的响应对比。
+2. **检查是否有重复 Header**：`curl -sI http://upstream:port/endpoint | sort` 检查重复行。
+3. **抓包**：`tcpdump -i any -A port <proxy-port> -w dump.pcap`，用 Wireshark 打开分析 HTTP 层 Header。
+4. **代理日志**：Traefik 打开 DEBUG 日志 `--log.level=DEBUG`；Nginx 检查 `error_log debug`。
+
+同理，如果大家遇到服务经过 Nginx、Traefik 代理后出现的疑难问题，可关注下 Response Header 是否有异常。

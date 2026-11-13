@@ -1,9 +1,9 @@
-# xlabs-club.github.io
+# xlabs-club
 
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/xlabs-club/xlabs-club.github.io/.github%2Fworkflows%2Fgh-pages.yml)](https://github.com/xlabs-club/xlabs-club.github.io/actions)
-[![GitHub Repo stars](https://img.shields.io/github/stars/xlabs-club/xlabs-club.github.io)](https://github.com/xlabs-club/xlabs-club.github.io/stargazers)
-[![GitHub contributors](https://img.shields.io/github/contributors/xlabs-club/xlabs-club.github.io)](https://github.com/xlabs-club/xlabs-club.github.io/graphs/contributors)
-[![Commit Activity](https://img.shields.io/github/commit-activity/m/xlabs-club/xlabs-club.github.io)](https://github.com/xlabs-club/xlabs-club.github.io)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/void-sleep/xlabs-club/.github%2Fworkflows%2Fgh-pages.yml)](https://github.com/void-sleep/xlabs-club/actions)
+[![GitHub Repo stars](https://img.shields.io/github/stars/void-sleep/xlabs-club)](https://github.com/void-sleep/xlabs-club/stargazers)
+[![GitHub contributors](https://img.shields.io/github/contributors/void-sleep/xlabs-club)](https://github.com/void-sleep/xlabs-club/graphs/contributors)
+[![Commit Activity](https://img.shields.io/github/commit-activity/m/void-sleep/xlabs-club)](https://github.com/void-sleep/xlabs-club)
 
 English | [中文](README.md)
 
@@ -21,7 +21,7 @@ _If these notes help your work, a ⭐ on this repo tells us to keep writing._
 - **Cloud-native** — using cloud-native tech to support constantly shifting, complex business.
 - **Blog** — engineering war stories; dig in and you'll find surprises.
 - **awesome-x-ops** — a curated list of software, blogs, and tools for AIOps, DataOps, DevOps, GitOps, and FinOps.
-- **xlabs-ops** — IaC ops scripts and reusable templates (e.g. Argo Workflows template repo) that compose and extend the official examples.
+- **void-ops** — IaC ops scripts and reusable templates (e.g. Argo Workflows template repo) that compose and extend the official examples.
 
 ## Featured reading
 
@@ -33,26 +33,22 @@ _If these notes help your work, a ⭐ on this repo tells us to keep writing._
 
 ## Contributing
 
-This site is built with [Hugo][] using the [Doks][] theme. Content is plain Markdown — just write.
+Built with [Astro][], [Starlight][] and [Starlight Blog][]. Content is plain Markdown — just write.
 
-Install Node.js and Hugo first, then:
+Requires Node.js 26 and pnpm 12.
 
 ```bash
-# install npm deps (this pulls Hugo from GitHub)
-npm install
-# start the dev server, then open http://localhost:1313/
-npm run dev
-# create a new page
-npm run create docs/platform/backstage.md
-npm run create blog/k8s.md
-# build
-npm run build
+pnpm install
+# dev server on http://localhost:4321/
+pnpm run dev
+# build to dist/
+pnpm run build
 ```
 
 Content layout:
 
 ```
-content/
+src/content/docs/
 ├── blog/      # engineering notes, war stories
 └── docs/
     ├── cloud/     # cloud-native
@@ -61,7 +57,7 @@ content/
     └── tldr/      # quick reference
 ```
 
-Minimal front matter for a new post:
+Minimal front matter for a new post (`src/content/docs/blog/my-post.md`):
 
 ```markdown
 ---
@@ -70,16 +66,18 @@ description: "One-line summary"
 date: 2024-03-31T21:29:52+08:00
 draft: false
 tags: [k8s]
+categories: ["K8S"]
 ---
 ```
 
-Create the file, preview with `npm run dev`, then open a PR.
+Create the file, preview with `pnpm run dev`, then open a PR.
 
 ## License
 
 Content is licensed under [CC BY-NC 4.0][].
 
 [xlabs.club]: https://www.xlabs.club
-[Hugo]: https://gohugo.io/
-[Doks]: https://github.com/thuliteio/doks
+[Astro]: https://astro.build/
+[Starlight]: https://starlight.astro.build/
+[Starlight Blog]: https://starlight-blog-docs.vercel.app/
 [CC BY-NC 4.0]: https://creativecommons.org/licenses/by-nc/4.0/

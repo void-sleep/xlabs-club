@@ -1,0 +1,30 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import PostList from '../../components/PostList.astro';
+import { getPosts, type Post } from '../../libs/posts';
+
+export async function getStaticPaths() {
+    const posts = await getPosts();
+    const authors = new Map<string, Post[]>();
+
+    for (const post of posts) {
+        const list = post.data.authors;
+        if (!Array.isArray(list)) continue;
+        for (const author of list) {
+            if (typeof author !== 'string') continue;
+            authors.set(author, [...(authors.get(author) ?? []), post]);
+        }
+    }
+
+    return [...authors.entries()].map(([author, entries]) => ({
+        params: { author },
+        props: { author, posts: entries }
+    }));
+}
+
+const { author, posts } = Astro.props;
+---
+
+<StarlightPage frontmatter={{ title: `作者：${author}`, description: `${author} 的文章`, pagefind: false }}>
+    <PostList {posts} />
+</StarlightPage>

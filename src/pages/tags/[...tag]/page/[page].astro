@@ -1,0 +1,28 @@
+---
+import TermPages from '../../../../components/TermPages.astro';
+import { collect } from '../../../../libs/posts';
+import { paginate } from '../../../../libs/paginate';
+
+export async function getStaticPaths() {
+    const tags = await collect('tags');
+
+    return tags.flatMap((term) => {
+        const pages = paginate(term.posts);
+        // Page 1 is the term URL, so only emit 2..n here.
+        return pages.slice(1).map((entry) => ({
+            params: { tag: term.slug, page: String(entry.page) },
+            props: {
+                label: term.label,
+                slug: term.slug,
+                page: entry.page,
+                total: pages.length,
+                posts: entry.items
+            }
+        }));
+    });
+}
+
+const { label, slug, page, total, posts } = Astro.props;
+---
+
+<TermPages kind="标签" {label} base={`/tags/${slug}`} {page} {total} {posts} />

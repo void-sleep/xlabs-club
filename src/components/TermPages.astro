@@ -1,0 +1,24 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import PostList from './PostList.astro';
+import Pager from './Pager.astro';
+import type { Post } from '../libs/posts';
+
+interface Props {
+    /** `分类` or `标签`, used in the page title. */
+    kind: string;
+    label: string;
+    base: string;
+    page: number;
+    total: number;
+    posts: Post[];
+}
+
+const { kind, label, base, page, total, posts } = Astro.props;
+const title = page === 1 ? `${kind}：${label}` : `${kind}：${label}（第 ${page} 页）`;
+---
+
+<StarlightPage frontmatter={{ title, description: `${kind}「${label}」下的文章`, pagefind: page === 1 }}>
+    <PostList {posts} />
+    <Pager {base} {page} {total} />
+</StarlightPage>

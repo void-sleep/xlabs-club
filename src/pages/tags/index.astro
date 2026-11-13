@@ -1,0 +1,40 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { collect } from '../../libs/posts';
+
+const tags = await collect('tags');
+---
+
+<StarlightPage frontmatter={{ title: '标签', description: '按标签浏览技术博客', pagefind: false, template: 'splash' }} hasSidebar={false}>
+    <ul class="xl-terms">
+        {tags.map((term) => (
+            <li>
+                <a href={`/tags/${term.slug}/`}>{term.label}</a>
+                <span class="xl-count">{term.posts.length}</span>
+            </li>
+        ))}
+    </ul>
+</StarlightPage>
+
+<style>
+    .xl-terms {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+        gap: 0.5rem 1.5rem;
+        list-style: none;
+        padding: 0;
+    }
+
+    .xl-terms li {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid var(--sl-color-hairline);
+    }
+
+    .xl-count {
+        color: var(--sl-color-gray-3);
+        font-size: var(--sl-text-sm);
+    }
+</style>

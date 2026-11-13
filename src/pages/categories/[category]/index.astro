@@ -1,0 +1,23 @@
+---
+import TermPages from '../../../components/TermPages.astro';
+import { collect } from '../../../libs/posts';
+import { paginate } from '../../../libs/paginate';
+
+export async function getStaticPaths() {
+    const categories = await collect('categories');
+
+    return categories
+        .filter((term) => !term.slug.includes('/'))
+        .map((term) => {
+            const pages = paginate(term.posts);
+            return {
+                params: { category: term.slug },
+                props: { label: term.label, page: 1, total: pages.length, posts: pages[0].items }
+            };
+        });
+}
+
+const { label, page, total, posts } = Astro.props;
+---
+
+<TermPages kind="分类" {label} base={`/categories/${Astro.params.category}`} {page} {total} {posts} />
