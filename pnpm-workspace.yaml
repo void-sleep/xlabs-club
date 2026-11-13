@@ -1,5 +1,5 @@
 allowBuilds:
   sharp: true
 minimumReleaseAgeExclude:
+  # Only starlight needs the exemption: 0.42.11 is newer than the 24h cutoff.
   - '@astrojs/starlight@0.42.11'
-  - prettier@3.10.1
