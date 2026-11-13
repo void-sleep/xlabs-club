@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:fh="http://purl.org/syndication/history/1.0"><channel><title>XLabs | 技术博客</title><description>卫星实验室（XLabs Club）用开源探索边界，用分享传递价值。专注平台工程、云原生、DevOps、AIOps、DataOps、FinOps 与 Java 开发的工程实践与技术分享。</description><link>https://www.xlabs.club/</link><language>zh-CN</language><fh:archive/><atom:link rel="current" href="https://www.xlabs.club/blog/rss.xml"/><atom:link rel="self" href="https://www.xlabs.club/blog/rss/2024-09.xml"/><atom:link rel="prev-archive" href="https://www.xlabs.club/blog/rss/2024-05.xml"/><atom:link rel="next-archive" href="https://www.xlabs.club/blog/rss/2024-10.xml"/><item><title>卫星实验室友情链接</title><link>https://www.xlabs.club/blog/xlabs-link-exchange/</link><guid isPermaLink="true">https://www.xlabs.club/blog/xlabs-link-exchange/</guid><description>卫星实验室友情链接，收录值得关注的在线开发工具、独立原创博客与高质量独立开源产品，欢迎推荐与共建。</description><pubDate>Thu, 26 Sep 2024 01:27:42 GMT</pubDate><content:encoded>&lt;p&gt;在建设本博客的过程中，我们发现了一些优秀的开发工具、有趣原创的独立博客，以及独立发布的良心开源产品，觉得有必要把他们展示出来，也算是对创作者的一点回馈。&lt;/p&gt;
+&lt;p&gt;如有侵权请提 Issue，如有推荐请到我们的 &lt;a href=&quot;https://github.com/void-sleep/xlabs-club&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;GitHub&lt;/a&gt; 仓库提交 Pull Request，本页会持续更新。&lt;/p&gt;
+&lt;div&gt;&lt;h2 id=&quot;在线工具&quot;&gt;在线工具&lt;/h2&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://it-tools.tech&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;IT Tools&lt;/a&gt;：研发人员常用的 JSON / 时间戳 / 数学 / 加密等各类在线生成与转换工具，开源、自托管友好。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.jstoolset.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;JS Toolset&lt;/a&gt;：JWT / JSON / URL / Base64 等编解码工具，界面简洁，开箱即用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;h2 id=&quot;独立博客&quot;&gt;独立博客&lt;/h2&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.diguage.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;地瓜哥的博客&lt;/a&gt;：分享技术带来的喜悦，内容扎实，更新稳定。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;h2 id=&quot;独立产品&quot;&gt;独立产品&lt;/h2&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;持续收录中，欢迎在 GitHub 仓库提交 Issue 推荐。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你也在写独立博客或做开源产品，欢迎通过 PR 把你的作品加入这里，让我们一起让优质内容被更多人看到。&lt;/p&gt;</content:encoded></item></channel></rss>
