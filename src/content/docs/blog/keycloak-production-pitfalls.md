@@ -2,7 +2,7 @@
 title: "Keycloak 生产环境避坑指南——从单实例到高可用集群"
 description: "Keycloak 生产环境避坑：H2 数据库、会话共享、反向代理、连接池、持久化、健康检查、优雅停机。实测配置和解决方案，从单实例到高可用集群。"
 date: 2026-07-09T21:00:00+08:00
-tags: [Keycloak, IAM, Kubernetes, High Availability, Production, Infinispan]
+tags: [Keycloak, Kubernetes, 高可用]
 categories: ["K8S", "DevOps", "Security"]
 ---
 

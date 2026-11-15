@@ -2,7 +2,7 @@
 title: "MCP 2026-07-28 弃用 Roots/Sampling/Logging，SDK 还在裸奔（1.32.1 实测）"
 description: "实测 @modelcontextprotocol/sdk@1.32.1：spec 已弃用 Roots/Sampling/Logging，但 SDK 零警告零 @deprecated，要主动 audit。"
 date: 2026-10-07T00:00:00+08:00
-tags: [MCP, MCP 2026-07-28, Roots, Sampling, Logging, MRTR, server/discover, SEP-2577]
+tags: [MCP, AI Agent]
 categories: ["AI", "MCP"]
 ---
 

@@ -3,7 +3,7 @@ title: "Spring Boot Start 脚手架定制开发和快速入门"
 description: "基于 start.spring.io 快速定制自己的 Spring Boot 脚手架，包含 parent pom 规范、统一包结构、代码模板和二方 jar 包管理"
 date: 2024-03-09T14:29:03+08:00
 lastUpdated: 2025-12-18T22:50:27+08:00
-tags: [Spring Boot, Java, 脚手架, start.spring.io]
+tags: [Spring Boot, Java]
 authors: ["void-sleep"]
 categories: ["Spring Boot", "Java"]
 ---

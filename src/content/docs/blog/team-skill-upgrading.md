@@ -3,9 +3,9 @@ title: "研发团队技能提升实践：从技术分享到能力模型建设"
 description: "分享研发团队技能提升的实践经验，包括技术分享机制、Code Review 文化、能力模型建设和外部培训策略。"
 date: 2023-12-13T17:25:41+08:00
 lastUpdated: 2023-12-13T17:25:41+08:00
-tags: [团队管理, 技能提升, 研发效能]
+tags: [研发效能]
 authors: ["void-sleep"]
-categories: ["Engineering"]
+categories: ["DevOps"]
 ---
 
 研发团队技能提升不是一两次培训就能解决的问题，它需要一套持续运转的机制。本文分享我们团队在过去几年中行之有效的几项实践。

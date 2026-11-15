@@ -3,7 +3,7 @@ title: "Windows 使用脚本提高权限以及设置环境变量"
 description: "Windows 使用脚本提高权限以及设置环境变量，解决域控安全策略限制下的文件修改和环境变量配置问题"
 date: 2024-02-26T23:25:29+08:00
 lastUpdated: 2025-12-18T22:59:15+08:00
-tags: [Tools, Windows, 权限管理, 环境变量]
+tags: [Windows, 系统运维]
 authors: ["void-sleep"]
 categories: ["Tools"]
 ---

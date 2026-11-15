@@ -3,9 +3,9 @@ title: "Java 25 完整升级指南：从 Java 8 到 Java 25 新特性、性能�
 description: "全面解析 Java 25 新特性、性能优化与迁移实战，帮助团队从 Java 8 平滑升级到 Java 25。"
 date: 2024-05-23T21:03:11+08:00
 lastUpdated: 2026-08-17T10:00:00+08:00
-tags: ["Java 25", "Java25", "JDK 25", "Java", "Spring Boot", "虚拟线程", "ZGC", "G1 GC", "性能优化", "Java 升级", "JVM 调优"]
+tags: [Java, 迁移升级, 性能优化]
 authors: ["void-sleep"]
-categories: ["Java", "Spring Boot", "JVM"]
+categories: ["Java", "Spring Boot"]
 ---
 
 ![java25-release](java25.png "java25-release")

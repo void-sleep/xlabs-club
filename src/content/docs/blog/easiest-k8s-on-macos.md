@@ -3,9 +3,9 @@ title: "MacOS 搭建本地 K8S 开发环境方案选型，基于 multipass、lim
 description: "MacOS 搭建本地 K8S 开发环境方案选型，基于 multipass、lima 等不同方案优缺点介绍对比，包含多架构模拟和 CI/CD 场景应用"
 date: 2024-04-13T15:20:43+08:00
 lastUpdated: 2025-12-18T22:45:52+08:00
-tags: [k8s, MacOS, multipass, lima, 本地开发环境]
+tags: [Kubernetes, 开发环境]
 authors: ["void-sleep"]
-categories: ["k8s"]
+categories: ["K8S"]
 ---
 
 因为工作经常需要用到 K8S，而且有时因网络原因不能完全依赖公司网络，或者因为测试新功能不能直接发布到公司 K8S 集群，所以就有了本地搭建 K8S 的需求。

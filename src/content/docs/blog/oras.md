@@ -3,7 +3,7 @@ title: "使用 OCI Artifacts 和 ORAS 标准化软件交付"
 description: "使用 OCI Artifacts、ORAS 和 Harbor 标准化软件交付，将 Helm Charts、配置文件等非容器制品统一纳入 OCI 注册中心管理。"
 date: 2024-04-12T10:13:01+08:00
 lastUpdated: 2024-04-12T10:13:01+08:00
-tags: [ORAS, OCI, Harbor, Helm, skopeo, 制品管理]
+tags: [ORAS, Helm, 制品管理]
 authors: ["void-sleep"]
 categories: ["DevOps", "K8S"]
 ---

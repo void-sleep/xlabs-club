@@ -2,7 +2,7 @@
 title: "AI 生成的 E2E 测试能抓到真 bug 吗：5 个模型 41 个用例的变异实测"
 description: "5 模型 × 41 用例 × 8 注入缺陷实测：变异体击杀 36/40，搜索大小写敏感 4 家全漏，12% 用例零击杀。"
 date: 2026-09-21T00:00:00+08:00
-tags: [AI 测试, Playwright, E2E 测试, 变异测试, 测试用例生成, LLM 质量门禁]
+tags: [AI 测试, Playwright]
 categories: ["AI", "DevOps"]
 ---
 

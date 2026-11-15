@@ -3,7 +3,7 @@ title: "容器镜像制作最佳实践，多架构编译，Dockerfile 编写小�
 description: "聚焦容器镜像制作最佳实践，涵盖多架构编译、Dockerfile 编写技巧，以及 ORAS、skopeo 等工具用法。"
 date: 2024-05-24T20:56:08+08:00
 lastUpdated: 2025-12-18T22:39:12+08:00
-tags: [k8s, Docker, Dockerfile, 容器镜像，多架构编译，ORAS, skopeo]
+tags: [Docker, 制品管理]
 authors: ["void-sleep"]
 categories: ["Docker", "K8S"]
 ---

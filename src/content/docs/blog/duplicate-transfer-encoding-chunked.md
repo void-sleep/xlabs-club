@@ -3,7 +3,7 @@ title: "重复 Transfer-Encoding Response Header 引起的 Traefik 代理服务 
 description: "重复 Transfer-Encoding Response Header 引起的 Traefik 代理服务 500 问题，包含 Spring Boot 应用 Header 重复问题排查和解决方案"
 date: 2023-11-26T10:21:44+08:00
 lastUpdated: 2025-12-18T22:55:02+08:00
-tags: [Java, Traefik, Spring Boot, HTTP Header]
+tags: [Traefik, Spring Boot]
 authors: ["void-sleep"]
 categories: ["Java"]
 ---

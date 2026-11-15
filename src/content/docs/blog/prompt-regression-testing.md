@@ -2,7 +2,7 @@
 title: "Prompt 回归测试实测：同一份 prompt 在两个模型上错得不一样"
 description: "11 条告警用例、4 个 prompt 版本、2 个模型共 198 次调用：JSON 合法但契约合规 0/33，temperature=0 判决仍翻转。"
 date: 2026-09-18T00:00:00+08:00
-tags: [Prompt Engineering, 回归测试, LLM 评测, 结构化输出, AIOps, Python]
+tags: [LLM, AI 测试]
 categories: ["AI", "DevOps"]
 ---
 

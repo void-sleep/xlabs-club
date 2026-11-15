@@ -2,7 +2,7 @@
 title: "MCP Streamable HTTP 实测：Accept 少一项就 406，第二次 initialize 会吃掉整个 Server"
 description: "实测 MCP SDK 1.30.0：Accept 必须同时含 json 和 SSE；单 transport 只服务第一个客户端，第二个 initialize 被 -32600 拒掉。"
 date: 2026-09-23T00:00:00+08:00
-tags: [MCP, Streamable HTTP, JSON-RPC, AI Agent]
+tags: [MCP, AI Agent]
 categories: ["AI", "MCP"]
 ---
 

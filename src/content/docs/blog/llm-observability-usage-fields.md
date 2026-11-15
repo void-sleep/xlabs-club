@@ -2,7 +2,7 @@
 title: "LLM 可观测性实测：OpenAI 兼容网关的 usage 靠不靠得住"
 description: "5 个模型实测同一台 OpenAI 兼容网关：include_usage 空操作、MiniMax 回传全 0 usage、断连丢 token、prompt_tokens 差 6.8 倍。"
 date: 2026-09-19T00:00:00+08:00
-tags: [LLM 可观测性, Token 统计, OpenAI 兼容, 成本归因, 流式输出, AI Gateway]
+tags: [LLM, 可观测性]
 categories: ["AI", "DevOps"]
 ---
 

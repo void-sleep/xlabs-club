@@ -2,7 +2,7 @@
 title: "MCP 工具挂了之后：empty_ok 比报错更危险，4 个模型实测"
 description: "3 种失败回灌 × 4 模型实测 MCP 工具失败后的行为：empty_ok 时 MiniMax 编出 4 个原因，deepseek 协议层直接 400。"
 date: 2026-10-06T00:00:00+08:00
-tags: [MCP, Tool Use, Function Calling, LLM 错误处理, AI Agent, 多轮对话]
+tags: [MCP, AI Agent, LLM]
 categories: ["AI", "MCP"]
 ---
 

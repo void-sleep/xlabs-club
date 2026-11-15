@@ -3,7 +3,7 @@ title: "Koupleless 试用报告总结，踩坑记录分享"
 description: "Koupleless 试用报告总结，踩坑记录分享，包含模块化开发部署、资源共享和迁移成本评估"
 date: 2024-05-27T14:20:24+08:00
 lastUpdated: 2025-12-18T22:57:09+08:00
-tags: [Java, Koupleless, 模块化, SOFAArk]
+tags: [Koupleless, 架构设计]
 authors: ["void-sleep"]
 categories: ["Java"]
 ---

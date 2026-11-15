@@ -3,7 +3,7 @@ title: "K8S Pod 容器内 Java 进程内存分析，内存虚高以及容器 OOM
 description: "分析 K8S Pod 内 Java 进程内存占用，定位容器 OOM、堆外内存与 GC 差异，并结合 NMT、jemalloc 排查。"
 date: 2023-01-07T10:54:37+08:00
 lastUpdated: 2025-12-18T22:42:28+08:00
-tags: [k8s, Java, JVM, 内存分析, OOM, GC, ZGC, G1]
+tags: [Java, Kubernetes, 性能优化]
 authors: ["void-sleep"]
 featured: true
 categories: ["Java"]

@@ -2,7 +2,7 @@
 title: "AI 写 Playwright 选择器，5 个模型 5 种 DOM 变异实测：i18n 团灭"
 description: "5 模型 × 4 选择器 × 5 种 DOM 变异实测：CSS Modules、多层包裹都免疫，换英文文案时 5 个 AI 全断；i18n 下仅 1 个模型存活。"
 date: 2026-10-01T00:00:00+08:00
-tags: [AI 测试, Playwright, 选择器稳定性, E2E 测试, 变异测试, LLM 代码生成]
+tags: [AI 测试, Playwright]
 categories: ["AI", "DevOps"]
 ---
 

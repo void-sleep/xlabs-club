@@ -3,7 +3,7 @@ title: "使用 Calibre Image Actions 在 CI/CD 中自动压缩图片"
 description: "介绍如何使用 calibreapp/image-actions 在 GitHub Actions 中自动压缩和优化图片，减少网站加载体积。"
 date: 2024-12-28T16:19:56+08:00
 lastUpdated: 2024-12-28T16:19:56+08:00
-tags: [CI/CD, GitHub Actions, 图片压缩, Web性能]
+tags: [CI/CD, 性能优化]
 authors: ["void-sleep"]
 categories: ["DevOps", "Tools"]
 ---

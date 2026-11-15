@@ -3,7 +3,7 @@ title: "Spring Boot 3 到 4 迁移完全指南：新特性、废弃功能与实�
 description: "梳理 Spring Boot 4 关键特性、迁移步骤与常见问题，帮助团队从 3.x 平稳升级到 4.0 并完成验证。"
 date: 2025-11-25T23:20:22+08:00
 lastUpdated: 2025-12-18T22:51:17+08:00
-tags: [Spring Boot, Spring Boot 4, Spring Framework 7, Jakarta EE, Tomcat 11, Virtual Threads, 迁移指南, OpenRewrite]
+tags: [Spring Boot, Java, 迁移升级]
 authors: ["void-sleep"]
 featured: true
 categories: ["Spring Boot", "Java"]

@@ -2,7 +2,7 @@
 title: "Playwright Test Agents 拆包：init-agents 落到磁盘的 3 个 agent 定义文件"
 description: "实测 npx playwright init-agents 1.63.0：四个 loop 各自的落点和格式，healer 定义里「不允许问用户」和 fixme() 兜底条款的原文。"
 date: 2026-09-29T00:00:00+08:00
-tags: [Playwright, Test Agents, E2E, MCP, Claude Code, AI Agent]
+tags: [Playwright, AI Agent]
 categories: ["AI", "DevOps"]
 ---
 

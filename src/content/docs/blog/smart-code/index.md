@@ -3,9 +3,9 @@ title: "企业级智能代码重构探索：大规模自动化迁移实践与工
 description: "介绍 OpenRewrite、Spring Boot Migrator 等工具在企业级自动化代码迁移与重构中的实践方法。"
 date: 2025-12-09T22:08:54+08:00
 lastUpdated: 2025-12-18T22:47:23+08:00
-tags: [Java, OpenRewrite, Spring Boot Migrator, 代码重构, 自动化迁移]
+tags: [OpenRewrite, 迁移升级, Java]
 authors: ["void-sleep"]
-categories: ["Java", "AI Code", "Spring Boot"]
+categories: ["Java", "AI", "Spring Boot"]
 ---
 
 作为一个以 Java 和 Spring 为主要技术栈的团队，在日常的软件开发中，我们经常会遇到一系列的组件升级和代码重构需求，在此过程我们期望能做到几个效果：

@@ -3,7 +3,7 @@ title: "Javax 和 Jakarta 过渡期兼容方案"
 description: "详细介绍从 Javax 到 Jakarta EE 的迁移兼容方案，包括背景、工具选择和实施策略，帮助企业平滑完成迁移"
 date: 2025-09-14T14:33:23+08:00
 lastUpdated: 2025-12-18T22:40:33+08:00
-tags: ["Java", "Spring Boot", "Jakarta EE", "Javax", 迁移]
+tags: [Java, Spring Boot, 迁移升级]
 authors: ["void-sleep"]
 categories: ["Java", "Spring Boot"]
 ---

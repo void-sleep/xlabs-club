@@ -2,7 +2,7 @@
 title: "AI Coding 工具横评——Aider vs Continue vs Cline 谁更适合你"
 description: "Aider、Continue、Cline 三大 AI Coding 工具 12 维度对比：工作流、代码编辑、上下文、模型支持、成本。附实战场景推荐和选型决策树。"
 date: 2026-07-09T22:00:00+08:00
-tags: [AI Coding, Aider, Continue, Cline, LLM, Developer Tools]
+tags: [AI 辅助研发]
 categories: ["AI", "Tools"]
 ---
 

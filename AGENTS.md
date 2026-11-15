@@ -11,6 +11,12 @@
 - 只改任务所需文件。不顺手改无关章节。
 - 中间过程性内容不入库如：讨论、迁移校验脚本。
 
+## 标签规范
+
+- 每篇最多 3 个：产品名（仅在正文介绍该产品时挂）+ 问题域。
+- 产品名用官方拼写；问题域优先复用已有词，确有必要再新增。
+- 不用报错串、配置项、版本号做标签，交给 title / description。
+
 ## 写作风格
 
 - 读取并遵循项目 skill `tech-docs-blog-writing`（`npx skills add https://github.com/void-sleep/agent-skills --skill tech-docs-blog-writing`）

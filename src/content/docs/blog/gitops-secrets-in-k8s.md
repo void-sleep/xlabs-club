@@ -3,7 +3,7 @@ title: "GitOps 中的 Kubernetes Secret 管理：方案对比与最佳实践"
 description: "GitOps 场景下如何管理 Kubernetes Secret，对比 Sealed Secrets、External Secrets Operator、SOPS、Vault 等方案。"
 date: 2024-05-17T21:41:08+08:00
 lastUpdated: 2024-05-17T21:41:08+08:00
-tags: [k8s, GitOps, Secret, 安全]
+tags: [Kubernetes, 安全]
 authors: ["void-sleep"]
 categories: ["K8S"]
 ---

@@ -3,7 +3,7 @@ title: "Git SSH 客户端同一机器多用户多仓库配置"
 description: "Git SSH 客户端在同一机器上为不同目录配置不同的用户，实现个人账号和公司账号分离管理"
 date: 2024-02-26T22:55:10+08:00
 lastUpdated: 2025-12-18T22:56:18+08:00
-tags: [Tools, Git, SSH, 多用户配置]
+tags: [Git, 开发环境]
 authors: ["void-sleep"]
 categories: ["Tools"]
 ---

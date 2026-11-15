@@ -3,9 +3,9 @@ title: "K8S 容器 PID 限制引起的 Java OutOfMemoryError"
 description: "K8S 容器 PID 限制引起的 Java OutOfMemoryError 问题分析与解决方案，包含 PID 限制配置和排查方法"
 date: 2023-09-07T16:21:44+08:00
 lastUpdated: 2025-12-18T22:37:18+08:00
-tags: [k8s, Java, OOM, PID限制]
+tags: [Kubernetes, Java]
 authors: ["void-sleep"]
-categories: ["k8s"]
+categories: ["K8S"]
 ---
 
 问题描述：

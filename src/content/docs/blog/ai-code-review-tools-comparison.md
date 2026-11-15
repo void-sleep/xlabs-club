@@ -2,7 +2,7 @@
 title: "AI Code Review 横评——CodeRabbit vs PR-Agent vs Copilot Review"
 description: "CodeRabbit、PR-Agent、GitHub Copilot Code Review 三款 AI 代码审查工具 10 维度实测对比：审查质量、误报率、配置成本、集成方式。附 GitHub Actions 配置和选型建议。"
 date: 2026-07-13T22:00:00+08:00
-tags: [AI Code Review, CodeRabbit, PR-Agent, Copilot, GitHub Actions, CI/CD]
+tags: [AI 辅助研发, CI/CD]
 categories: ["AI", "DevOps"]
 ---
 

@@ -3,7 +3,7 @@ title: "使用 Pulumi 部署 cert-manager 创建 K8S 自签名证书并信任证
 description: "使用 Pulumi 部署 cert-manager 创建 K8S 自签名证书，为应用自动签发 HTTPS 证书，并信任证书，适用于内网环境证书管理"
 date: 2024-04-29T21:49:22+08:00
 lastUpdated: 2025-12-18T22:53:28+08:00
-tags: [k8s, pulumi, cert-manager, TLS, 自签名证书]
+tags: [Pulumi, cert-manager, 安全]
 authors: ["void-sleep"]
 categories: ["K8S"]
 ---

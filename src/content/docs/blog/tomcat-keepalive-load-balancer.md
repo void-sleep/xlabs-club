@@ -3,7 +3,7 @@ title: "K8S Service 长连接导致负载不均衡问题分析和解决办法"
 description: "K8S Service 长连接导致负载不均衡问题分析和解决办法，包含 Keep-Alive 连接管理和 ipvs 负载均衡策略调整"
 date: 2024-04-11T21:05:46+08:00
 lastUpdated: 2025-12-18T22:52:41+08:00
-tags: [k8s, Service, 负载均衡, Keep-Alive]
+tags: [Kubernetes, 高可用]
 authors: ["void-sleep"]
 categories: ["K8S"]
 ---

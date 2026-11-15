@@ -2,7 +2,7 @@
 title: "MCP 协议深度解析——AI 工具互联的 USB-C 时刻"
 description: "MCP（Model Context Protocol）是什么？为什么它是 AI Agent 时代的通用接口标准？深度解析 MCP 架构、Server/Client 模式、资源/工具/提示三大原语，以及与 Function Calling 的本质区别。"
 date: 2026-07-09T23:00:00+08:00
-tags: [MCP, Model Context Protocol, AI Agent, Tool Integration, LLM, Anthropic]
+tags: [MCP, AI Agent]
 categories: ["AI", "Architecture"]
 ---
 

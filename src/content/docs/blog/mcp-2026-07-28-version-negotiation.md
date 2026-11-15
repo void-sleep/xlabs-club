@@ -2,7 +2,7 @@
 title: "MCP 2026-07-28 实测：initialize 握手没了，老客户端还能连吗"
 description: "实测 MCP 2026-07-28：initialize 握手被移除，改为每请求用 _meta 声明版本并强制 server/discover。用官方 v1/v2 SDK 与 mcporter 抓包看两代客户端如何协商，附 dual-era Server 实现与 tools/list 缓存字段报错。"
 date: 2026-09-15T00:00:00+08:00
-tags: [MCP, Model Context Protocol, Protocol Version, server/discover, AI Agent, Node.js]
+tags: [MCP, AI Agent]
 categories: ["AI", "Architecture"]
 ---
 

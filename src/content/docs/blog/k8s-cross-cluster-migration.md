@@ -2,9 +2,9 @@
 title: "K8S 集群平滑迁移：Service + 手工 EndpointSlice 跨集群引流"
 description: "K8S 集群迁移的平滑方案：老集群 Service 开 NodePort，新集群建无 selector 同名 Service + 手工 EndpointSlice 指向老集群，服务逐个就绪后再切回。"
 date: 2026-08-02T11:00:00+08:00
-tags: [k8s, 集群迁移, EndpointSlice, NodePort, 高可用]
+tags: [Kubernetes, 迁移升级]
 authors: ["void-sleep"]
-categories: ["k8s"]
+categories: ["K8S"]
 ---
 
 ## 背景
