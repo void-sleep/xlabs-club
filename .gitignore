@@ -8,21 +8,17 @@ dist
 *.tsbuildinfo
 .pnpm-store/
 
-# Editor and tooling caches
-.tmp
-.sass-cache
-.eslintcache
-.stylelintcache
-.impl
-
-# Build artefacts and local caches
-resources/
+.hugo_build.lock
+/resources/
 .worktrees/
 .teamai/
+.vscode/
 
-# Local agent settings
+# Installed skills (external dependencies)
+.agents/
 .claude/
-.claude.json
+agent/
+skills-lock.json
 
 .env
 .env.*

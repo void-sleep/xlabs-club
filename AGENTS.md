@@ -1,20 +1,19 @@
 # AGENTS.md
 
-中文 IDaaS / IAM 技术书。Astro + Starlight，随 `main` 部署。
+我的技术博客。
 
 ## 仓库约定
 
 - 正文：`src/content/docs/`。frontmatter 保留 `title`、`description`、`sidebar.order`。侧栏由 `astro.config.mjs` 的 `sidebar` 按目录生成。
-- 静态源文件：`public/`（favicon 等原样拷贝到站点根）。Logo 等需处理的资源：`src/assets/`。构建产物：`dist/`，不入库。
+- 静态源文件：`public/`（favicon 等原样拷贝到站点根）。Logo 等需处理的资源：`src/assets/`。
 - 站内链接：普通 Markdown 路径，如 `[标题](/docs/fundamentals/xxx/)`。
-- 页面搬家默认不加 redirects，旧地址 404。除非明确要求跳转。
-- 命令：`pnpm install`、`pnpm run dev`、`pnpm run build`。
+- 页面搬家默认不加 redirects，旧地址 404。
 - 只改任务所需文件。不顺手改无关章节。
-- 中间迁移校验脚本不入库。
+- 中间过程性内容不入库如：讨论、迁移校验脚本。
 
 ## 写作风格
 
-- 科技风简洁不啰嗦，无中间过程性表示，无关废话一律禁用
+- 读取并遵循项目 skill `tech-docs-blog-writing`（`npx skills add https://github.com/void-sleep/agent-skills --skill tech-docs-blog-writing`）
 
 ## Git 提交规范
 
@@ -33,10 +32,9 @@ linked worktree 只放本仓 `.worktrees/<slug>/`。`<slug>` 用分支语义（�
 ### main 分支清洁
 
 - 构建产物、日志、缓存、临时文件、依赖目录等中间产物一律不入库
-- 排除规则写进仓库 `.gitignore`，不靠全局 gitignore（多机部署，全局不可移植）
+- 排除规则写进仓库 `.gitignore`
 - 提交前 `git status`，确认无多余文件
 
 ## 红线
 
-- 不入库：实密（密码、token、私钥、`.env`、cookie、证书）、本公司内网与未公开接入点、未公开产品规划。
-- 工作区或 diff 里出现即停，改成示例后再提交。
+- 不入库任何敏感信息：实密（密码、token、私钥、`.env`、cookie、证书）、本公司内网与未公开接入点、未公开产品规划。
