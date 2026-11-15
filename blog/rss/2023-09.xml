@@ -102,4 +102,4 @@
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;合理设置 PID Limit&lt;/strong&gt;：根据上述估算公式给出合理的 &lt;code dir=&quot;auto&quot;&gt;pidLimit&lt;/code&gt;，不要一味放大——过高的 PID Limit 失去了 container 隔离的意义。&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content:encoded><category>k8s</category><category>Java</category><category>OOM</category><category>PID限制</category></item></channel></rss>
+&lt;/ol&gt;</content:encoded><category>Kubernetes</category><category>Java</category></item></channel></rss>

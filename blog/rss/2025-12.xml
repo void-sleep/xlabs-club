@@ -218,4 +218,4 @@
 &lt;li&gt;执行过程中可能会报错，比如 maven 插件升级后某些属性可能变更或失效，需要手动解决错误后，再执行 &lt;code dir=&quot;auto&quot;&gt;mvn rewrite:run&lt;/code&gt;，&lt;/li&gt;
 &lt;li&gt;可重复执行 &lt;code dir=&quot;auto&quot;&gt;mvn rewrite:run&lt;/code&gt; 命令，可随时加入新的 recipe 再执行，所以为了观察变更和保证执行成功，可分批次加入 recipe 多次执行。&lt;/li&gt;
 &lt;li&gt;OpenRewrite 不解析依赖的第三方 jar 包内容，所以第三方 jar 的问题需要自行识别，比如从 Java EE 到 Jakarta EE，只是替换规则中知道的 jar 包版本和当前项目的源代码，不会自动把 jar 包内的 &lt;code dir=&quot;auto&quot;&gt;javax.&lt;/code&gt; 替换为 &lt;code dir=&quot;auto&quot;&gt;jakarta.&lt;/code&gt;。&lt;/li&gt;
-&lt;/ol&gt;</content:encoded><category>Java</category><category>OpenRewrite</category><category>Spring Boot Migrator</category><category>代码重构</category><category>自动化迁移</category></item></channel></rss>
+&lt;/ol&gt;</content:encoded><category>OpenRewrite</category><category>迁移升级</category><category>Java</category></item></channel></rss>

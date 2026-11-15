@@ -95,4 +95,4 @@
 &lt;li&gt;&lt;strong&gt;大文件限制&lt;/strong&gt;：GitHub Actions Runner 磁盘空间有限（约 14GB），超大型仓库需注意。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;GITHUB_TOKEN 权限&lt;/strong&gt;：需在仓库 Settings &gt; Actions &gt; General 中开启 “Allow GitHub Actions to create and approve pull requests”。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;PNG 无损 vs 有损&lt;/strong&gt;：默认使用有损压缩，视觉差异极小但体积减少显著。如必须保留无损 PNG，可设置 &lt;code dir=&quot;auto&quot;&gt;pngQuality: 100&lt;/code&gt;（此时仅做无损优化，体积减少有限）。&lt;/li&gt;
-&lt;/ol&gt;</content:encoded><category>CI/CD</category><category>GitHub Actions</category><category>图片压缩</category><category>Web性能</category></item></channel></rss>
+&lt;/ol&gt;</content:encoded><category>CI/CD</category><category>性能优化</category></item></channel></rss>

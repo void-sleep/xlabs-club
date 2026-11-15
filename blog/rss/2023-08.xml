@@ -123,4 +123,4 @@
 &lt;li&gt;
 &lt;p&gt;避免无意义不可枚举的 Tag，混乱的 Tag 比无 Tag 更难管理。&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content:encoded><category>Spring Boot</category><category>Java</category><category>Micrometer</category><category>Prometheus</category><category>监控</category></item></channel></rss>
+&lt;/ol&gt;</content:encoded><category>Spring Boot</category><category>Prometheus</category><category>可观测性</category></item></channel></rss>

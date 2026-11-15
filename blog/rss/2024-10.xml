@@ -12,7 +12,7 @@
 &lt;ol&gt;
 &lt;li&gt;本文档里的示例代码是以 k3s 为基础，使用 traefik 作为 ingress controller，整体完善但略显复杂，如果没有 K3S/K8S，以其他方式部署也是完全可以的，基本原理都是一样的。&lt;/li&gt;
 &lt;li&gt;对于某些场景下可选的配置，会单独说明，请注意分别。&lt;/li&gt;
-&lt;li&gt;这里提到的每个组件都是可替换的，比如 nginx 代替 traefik，Pomerium 代替 oauth2-proxy，可根据爱好选择，后面也会适当补充几种不同方式的对比和部署差异，更详细内容请参考本站另外一篇文档 &lt;a href=&quot;https://www.xlabs.club/docs/platform/iam/&quot;&gt;统一身份认证&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;这里提到的每个组件都是可替换的，比如 nginx 代替 traefik，Pomerium 代替 oauth2-proxy，可根据爱好选择，后面也会适当补充几种不同方式的对比和部署差异，更详细内容请参考本站另外一篇文章 &lt;a href=&quot;https://www.xlabs.club/blog/iam-selection/&quot;&gt;平台工程：统一身份认证技术选型&lt;/a&gt;。&lt;/li&gt;
 &lt;li&gt;示例中的代码都是从真实环境拷贝经过检验的，但为了便于理解可能裁剪无关紧要的内容，完整的安装部署源码请参考我们的部署脚本 &lt;a href=&quot;https://github.com/void-sleep/void-ops&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;xlabs-club/xlabs-ops&lt;/a&gt;。&lt;/li&gt;
 &lt;li&gt;需要懂一些 K8S、OIDC 基础知识，此处只提供链接不展开说明。&lt;/li&gt;
 &lt;/ol&gt;
@@ -237,4 +237,4 @@ aud 声明指定令牌的预期接收者，oauth2-proxy 期望与 —client-id �
 &lt;div&gt;&lt;figure&gt;&lt;figcaption&gt;&lt;span&gt;&lt;/span&gt;&lt;/figcaption&gt;&lt;pre&gt;&lt;code&gt;&lt;div&gt;&lt;div&gt;&lt;span&gt;500 Internal Server Error&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;span&gt;Oops! Something went wrong. For more information contact your server administrator.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;span&gt;[oauthproxy.go:902] Error creating session during OAuth2 callback: audience from claim aud with value [account] does not match with any of allowed audiences map[oauth2-proxy:{}]&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded><category>k8s</category><category>idaas</category><category>oauth2-proxy</category><category>Traefik</category><category>Keycloak</category><category>SSO</category><category>RBAC</category></item></channel></rss>
+&lt;/ul&gt;</content:encoded><category>oauth2-proxy</category><category>Keycloak</category><category>Traefik</category></item></channel></rss>

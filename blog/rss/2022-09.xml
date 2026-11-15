@@ -75,4 +75,4 @@
 &lt;li&gt;建议为每个用户的 PVC 设置合理的存储上限，避免某个用户占满节点磁盘。&lt;/li&gt;
 &lt;li&gt;code-server 默认以 root 运行容器的环境，&lt;code dir=&quot;auto&quot;&gt;/var/run/docker.sock&lt;/code&gt; 一旦挂载容器就有了 root 权限，小心使用。&lt;/li&gt;
 &lt;li&gt;定期备份用户的 &lt;code dir=&quot;auto&quot;&gt;/config/workspace&lt;/code&gt; 目录，尤其是用户的 Settings 和已安装插件信息。&lt;/li&gt;
-&lt;/ol&gt;</content:encoded><category>devops</category><category>code-server</category><category>VS Code</category><category>远程IDE</category></item></channel></rss>
+&lt;/ol&gt;</content:encoded><category>VS Code</category><category>开发环境</category></item></channel></rss>

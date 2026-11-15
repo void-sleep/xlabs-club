@@ -59,4 +59,4 @@
 &lt;li&gt;&lt;strong&gt;抓包&lt;/strong&gt;：&lt;code dir=&quot;auto&quot;&gt;tcpdump -i any -A port &amp;#x3C;proxy-port&gt; -w dump.pcap&lt;/code&gt;，用 Wireshark 打开分析 HTTP 层 Header。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;代理日志&lt;/strong&gt;：Traefik 打开 DEBUG 日志 &lt;code dir=&quot;auto&quot;&gt;--log.level=DEBUG&lt;/code&gt;；Nginx 检查 &lt;code dir=&quot;auto&quot;&gt;error_log debug&lt;/code&gt;。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;同理，如果大家遇到服务经过 Nginx、Traefik 代理后出现的疑难问题，可关注下 Response Header 是否有异常。&lt;/p&gt;</content:encoded><category>Java</category><category>Traefik</category><category>Spring Boot</category><category>HTTP Header</category></item></channel></rss>
+&lt;p&gt;同理，如果大家遇到服务经过 Nginx、Traefik 代理后出现的疑难问题，可关注下 Response Header 是否有异常。&lt;/p&gt;</content:encoded><category>Traefik</category><category>Spring Boot</category></item></channel></rss>
