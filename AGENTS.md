@@ -4,9 +4,9 @@
 
 ## 仓库约定
 
-- 正文：`src/content/docs/`。frontmatter 保留 `title`、`description`、`sidebar.order`。侧栏由 `astro.config.mjs` 的 `sidebar` 按目录生成。
+- 正文：`src/content/docs/blog/`（站点内容主体）。frontmatter 必填 `title`、`description`、`date`、`authors`、`categories`。
 - 静态源文件：`public/`（favicon 等原样拷贝到站点根）。Logo 等需处理的资源：`src/assets/`。
-- 站内链接：普通 Markdown 路径，如 `[标题](/docs/fundamentals/xxx/)`。
+- 站内链接：普通 Markdown 路径，如 `[标题](/blog/xxx/)`。
 - 页面搬家默认不加 redirects，旧地址 404。
 - 只改任务所需文件。不顺手改无关章节。
 - 中间过程性内容不入库如：讨论、迁移校验脚本。

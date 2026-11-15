@@ -3,8 +3,9 @@ title: "Atlas：现代化的数据库 Schema 管理工具"
 description: "Atlas 是一个用于管理数据库 Schema 的现代化工具，支持声明式迁移、版本控制和 CI/CD 集成。"
 date: 2024-02-24T10:51:27+08:00
 lastUpdated: 2024-02-24T10:51:27+08:00
-sidebar:
-  order: 999
+tags: [Atlas, 数据库, 迁移升级]
+authors: ["void-sleep"]
+categories: ["Platform Engineering", "MySQL"]
 ---
 
 [Atlas](https://atlasgo.io/) 是 Ariga 公司开源的数据库 Schema 管理工具，支持声明式地管理数据库结构，类似 Terraform 管理基础设施的思路。它解决了传统迁移工具（如 Flyway、Liquibase）中手动编写 SQL 迁移脚本的痛点。
@@ -114,16 +115,15 @@ jobs:
 
 当 PR 中修改了 Schema 定义文件但未更新迁移脚本时，Atlas Action 会自动在 PR 中评论展示缺失的 DDL：
 
-````
+````markdown
 ## Migration Check
 The migration directory is not in sync with the desired state.
 The following SQL statements are needed:
 
 ```sql
 ALTER TABLE users ADD COLUMN status VARCHAR(20) NOT NULL DEFAULT 'active';
-````
-
 ```
+````
 
 ## 与 Flyway / Liquibase 的对比
 
@@ -135,7 +135,7 @@ ALTER TABLE users ADD COLUMN status VARCHAR(20) NOT NULL DEFAULT 'active';
 | 学习成本 | 低（只需会 SQL） | 中（需学变更集语法） | 中（需学 HCL Schema 语法） |
 | 运行方式 | 应用启动时自动迁移 | 应用启动时 / CLI | 推荐 CLI + CI |
 
-Atlas 不是要完全取代 Flyway/Liquibase。如果你的团队已经习惯手写迁移脚本且流程稳定，继续使用现有方案没问题。Atlas 更适合希望将 Schema 管理"声明式化"和集成到 CI 中的团队。
+Atlas 不是要完全取代 Flyway/Liquibase。如果你的团队已经习惯手写迁移脚本且流程稳定，继续使用现有方案没问题。Atlas 更适合希望将 Schema 管理“声明式化”和集成到 CI 中的团队。
 
 ## 最佳实践
 
@@ -143,4 +143,3 @@ Atlas 不是要完全取代 Flyway/Liquibase。如果你的团队已经习惯手
 2. **CI 中执行 Schema 检查**：确保 PR 中 Schema 变更与迁移脚本同步。
 3. **使用 dev-url 指定临时数据库**：Atlas 需要一个临时数据库来计算差异和验证 SQL，生产环境可以使用 Docker 容器作为临时数据库。
 4. **审查自动生成的迁移脚本**：虽然 Atlas 生成的 DDL 在逻辑上是正确的，但在生产执行前仍需人工审查（索引命名、LOCK 策略等）。
-```

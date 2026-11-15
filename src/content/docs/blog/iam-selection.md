@@ -1,10 +1,11 @@
 ---
-title: "统一身份认证"
+title: "平台工程：统一身份认证技术选型"
 description: "统一身份认证（Identity and Access Management，身份认证和访问控制，简称 IAM）的技术选型和实践"
 date: 2023-12-19T22:26:42+08:00
 lastUpdated: 2023-12-19T22:26:42+08:00
-sidebar:
-  order: 20
+tags: [Keycloak, 认证鉴权]
+authors: ["void-sleep"]
+categories: ["Platform Engineering", "idaas"]
 ---
 
 统一身份认证（Identity and Access Management，身份认证和访问控制，简称 IAM）的技术选型和实践。
@@ -114,5 +115,4 @@ C4Context
 
     UpdateRelStyle(proxy, keycloak,$lineColor="blue" $offsetX="260")
     UpdateLayoutConfig($c4ShapeInRow="4", $c4BoundaryInRow="4")
-
 ```

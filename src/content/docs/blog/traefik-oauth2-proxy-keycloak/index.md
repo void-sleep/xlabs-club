@@ -3,9 +3,9 @@ title: "使用 oauth2-proxy 为任意程序增加认证鉴权，结合 K8S、tra
 description: "使用 oauth2-proxy 结合 Traefik、Keycloak 与 K8S，为应用接入统一登录认证、单点登录和 RBAC 鉴权。"
 date: 2024-10-10T23:30:40+08:00
 lastUpdated: 2025-12-18T22:34:22+08:00
-tags: [k8s, idaas, oauth2-proxy, Traefik, Keycloak, SSO, RBAC]
+tags: [oauth2-proxy, Keycloak, Traefik]
 authors: ["void-sleep"]
-categories: ["k8s", "idaas"]
+categories: ["K8S", "idaas"]
 ---
 
 作为一个程序员，在日常开发中永远避免不了认证鉴权，而我们开发的某些应用，并不需要太复杂的鉴权，比如可能只要求必须是登录用户，或者只需要根据角色进行 RBAC 鉴权。有没有方法简化此流程，让应用开发者只关注业务开发，这就是本文档要解决的问题。
@@ -23,7 +23,7 @@ categories: ["k8s", "idaas"]
 
 1. 本文档里的示例代码是以 k3s 为基础，使用 traefik 作为 ingress controller，整体完善但略显复杂，如果没有 K3S/K8S，以其他方式部署也是完全可以的，基本原理都是一样的。
 2. 对于某些场景下可选的配置，会单独说明，请注意分别。
-3. 这里提到的每个组件都是可替换的，比如 nginx 代替 traefik，Pomerium 代替 oauth2-proxy，可根据爱好选择，后面也会适当补充几种不同方式的对比和部署差异，更详细内容请参考本站另外一篇文档 [统一身份认证](https://www.xlabs.club/docs/platform/iam/)。
+3. 这里提到的每个组件都是可替换的，比如 nginx 代替 traefik，Pomerium 代替 oauth2-proxy，可根据爱好选择，后面也会适当补充几种不同方式的对比和部署差异，更详细内容请参考本站另外一篇文章 [平台工程：统一身份认证技术选型](/blog/iam-selection/)。
 4. 示例中的代码都是从真实环境拷贝经过检验的，但为了便于理解可能裁剪无关紧要的内容，完整的安装部署源码请参考我们的部署脚本 [xlabs-club/xlabs-ops](https://github.com/void-sleep/void-ops)。
 5. 需要懂一些 K8S、OIDC 基础知识，此处只提供链接不展开说明。
 

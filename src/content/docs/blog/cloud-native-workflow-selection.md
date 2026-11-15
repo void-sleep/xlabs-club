@@ -3,8 +3,9 @@ title: "云原生工作流引擎技术选型"
 description: "对比和评估开源云原生工作流引擎（Argo Workflows、Temporal、Apache Airflow、Prefect 等），给出选型建议与最佳实践。"
 date: 2024-01-24T18:28:13+08:00
 lastUpdated: 2024-01-24T18:28:13+08:00
-sidebar:
-  order: 999
+tags: [工作流引擎, 架构设计]
+authors: ["void-sleep"]
+categories: ["Platform Engineering", "K8S"]
 ---
 
 工作流引擎是平台工程的核心组件之一，负责编排 CI/CD Pipeline、数据处理任务、基础设施变更等复杂流程。本文对比几款主流云原生工作流引擎，给出选型建议。

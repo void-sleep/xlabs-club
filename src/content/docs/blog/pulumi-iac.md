@@ -3,8 +3,9 @@ title: "Pulumi：用编程语言管理云基础设施"
 description: "使用 Pulumi 以 TypeScript、Python、Go 等编程语言管理云基础设施，对比 Terraform 并分享实践经验。"
 date: 2024-04-13T18:01:15+08:00
 lastUpdated: 2024-04-13T18:01:15+08:00
-sidebar:
-  order: 999
+tags: [Pulumi]
+authors: ["void-sleep"]
+categories: ["Platform Engineering", "DevOps"]
 ---
 
 [Pulumi](https://www.pulumi.com/) 是 Infrastructure as Code（IaC）领域的新一代工具，允许开发者使用通用编程语言（TypeScript、Python、Go、C#、Java）而不是 DSL（如 HCL）来管理云基础设施。

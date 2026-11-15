@@ -49,12 +49,10 @@ pnpm run build
 
 ```
 src/content/docs/
-├── blog/      # 踩坑记录、实践笔记
-└── docs/
-    ├── cloud/     # 云原生
-    ├── platform/  # 平台工程
-    ├── guides/    # 操作指南
-    └── tldr/      # 简明速查
+├── blog/      # 踩坑记录、实践笔记（站点内容主体）
+├── about.md   # 关于
+├── privacy.md # 隐私说明
+└── 404.md     # 404 页
 ```
 
 新文章最小 front matter 示例（`src/content/docs/blog/my-post.md`）：

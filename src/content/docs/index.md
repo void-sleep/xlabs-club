@@ -12,7 +12,7 @@ hero:
   tagline: 用开源探索边界，用分享传递价值。分享平台工程、云原生与 DevOps/AIOps 实践，让技术驱动业务长期增长。
   actions:
     - text: Get Started
-      link: /docs/guides/introduction/
+      link: /blog/
       variant: primary
 ---
 
@@ -33,7 +33,7 @@ hero:
   <div class="xl-feature">
     <h2>云原生</h2>
     <p>云原生技术探索，如何以云原生技术支撑起不断变化的复杂业务。</p>
-    <p><a href="/docs/cloud/introduction/">Docs</a></p>
+    <p><a href="/blog/">Blog</a></p>
   </div>
   <div class="xl-feature">
     <h2>Argo Hub</h2>

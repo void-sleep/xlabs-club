@@ -49,12 +49,10 @@ Content layout:
 
 ```
 src/content/docs/
-├── blog/      # engineering notes, war stories
-└── docs/
-    ├── cloud/     # cloud-native
-    ├── platform/  # platform engineering
-    ├── guides/    # how-tos
-    └── tldr/      # quick reference
+├── blog/      # engineering notes, war stories (the site's content)
+├── about.md   # about
+├── privacy.md # privacy
+└── 404.md     # 404 page
 ```
 
 Minimal front matter for a new post (`src/content/docs/blog/my-post.md`):

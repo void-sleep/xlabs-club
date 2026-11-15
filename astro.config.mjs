@@ -36,13 +36,7 @@ export default defineConfig({
             favicon: '/favicon.svg',
             defaultLocale: 'root',
             locales: { root: { label: '简体中文', lang: 'zh-CN' } },
-            // Hugo's menu/weight tree, kept in the same reading order.
             sidebar: [
-                { label: '概览', collapsed: true, items: [{ slug: 'docs' }] },
-                { label: 'Guides', collapsed: true, items: [{ autogenerate: { directory: 'docs/guides', collapsed: true } }] },
-                { label: '平台工程', collapsed: true, items: [{ autogenerate: { directory: 'docs/platform', collapsed: true } }] },
-                { label: '云原生', collapsed: true, items: [{ autogenerate: { directory: 'docs/cloud', collapsed: true } }] },
-                { label: 'TL;DR', collapsed: true, items: [{ autogenerate: { directory: 'docs/tldr', collapsed: true } }] },
                 {
                     label: '关于',
                     collapsed: true,

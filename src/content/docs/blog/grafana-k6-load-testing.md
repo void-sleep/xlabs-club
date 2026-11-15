@@ -3,8 +3,9 @@ title: "Grafana k6 性能测试入门：编写、运行和分析负载测试"
 description: "使用 Grafana k6 进行 API 性能测试和负载测试的完整指南，涵盖脚本编写、场景配置和 CI 集成。"
 date: 2024-03-06T14:07:29+08:00
 lastUpdated: 2024-03-06T14:07:29+08:00
-sidebar:
-  order: 999
+tags: [k6, 性能优化]
+authors: ["void-sleep"]
+categories: ["Platform Engineering", "DevOps"]
 ---
 
 [k6](https://k6.io/) 是 Grafana 旗下开源的性能测试工具，使用 JavaScript 编写测试脚本，轻量、CLI 友好、易于集成 CI/CD。它专注于开发者体验和自动化测试，相比 JMeter 更现代化。
